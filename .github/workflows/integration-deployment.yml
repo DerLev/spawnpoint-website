@@ -67,7 +67,7 @@ jobs:
           add-notice-with-url: false
 
   vm-manager-build-deploy:
-    name: "VM-Manager: Build Container & Deploy on Cloud Run"
+    name: "VM-Manager: Build Container & Upload to ghcr.io"
     runs-on: ubuntu-latest
     needs: [vm-manager-lint-typecheck]
     permissions:
@@ -92,7 +92,7 @@ jobs:
           images: ghcr.io/derlev/spawnpoint-vm-manager
           tags: |
             type=raw,value=latest
-            type=sha,prefix=,format=long
+            type=sha,prefix=,format=short
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
