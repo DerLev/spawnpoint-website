@@ -1,0 +1,20 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "DerLev"
+    labels:
+      - "dependabot/gh-actions"
+
+  - package-ecosystem: "npm"
+    directory: "vm-manager/"
+    schedule:
+      interval: "monthly"
+    assignees:
+      - "DerLev"
+    labels:
+      - "dependabot/yarn"
+    open-pull-requests-limit: 10
