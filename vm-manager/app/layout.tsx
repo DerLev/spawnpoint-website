@@ -6,6 +6,7 @@ import {
 } from '@mantine/core'
 import '@mantine/core/styles.css'
 import AppShell from '@/components/AppShell'
+import Providers from '@/components/Providers'
 
 export const metadata: Metadata = {
   title: 'Spawnpoint VMM',
@@ -24,7 +25,9 @@ export default function RootLayout({
       </head>
       <body>
         <MantineProvider>
-          <AppShell>{children}</AppShell>
+          <Providers>
+            <AppShell>{children}</AppShell>
+          </Providers>
         </MantineProvider>
       </body>
     </html>
